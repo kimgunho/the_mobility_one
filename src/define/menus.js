@@ -20,8 +20,8 @@ const MENUS = {
         url: '/jiHoV2',
       },
       {
-        title: 'SV-MAX',
-        url: '/svMax',
+        title: 'SVMAX',
+        url: '/SVMax',
       },
     ],
   },

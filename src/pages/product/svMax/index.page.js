@@ -16,7 +16,7 @@ const Page = () => {
 
   return (
     <div className={cx('container')}>
-      <SubTop title="SV - MAX" subTitle="PRODUCT - H/W" />
+      <SubTop title="SVMAX" subTitle="PRODUCT - H/W" />
       <div className={cx('wrapper')}>
         <div className={cx('contents')}>
           <div className={cx('row')}>
