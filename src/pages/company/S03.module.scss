@@ -33,7 +33,10 @@
         position: relative;
         padding-left: 2.75rem;
         &:first-of-type {
-          margin-left: 6.75rem;
+          margin-left: calc((100vw - 1704px) / 2);
+          @media screen and (max-width: 1812px) {
+            margin-left: 6.75rem;
+          }
         }
         &:last-of-type {
           padding-right: 6.75rem;
