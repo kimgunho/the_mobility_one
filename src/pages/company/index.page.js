@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 
+import Seo from '@/components/global/Seo';
 import GlobalLayout from '@/components/layout/GlobalLayout';
 import styles from './index.module.scss';
 import S01 from './S01';
@@ -14,6 +15,7 @@ const cx = classNames.bind(styles);
 const Page = () => {
   return (
     <div className={cx('container')}>
+      <Seo title="회사소개" description="모빌리티원의 회사소개입니다." />
       <S01 />
       <div className={cx('wrapper')}>
         <S02 />
