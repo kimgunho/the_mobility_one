@@ -1,0 +1,89 @@
+@import '@/styles/common';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-optical-sizing: auto;
+}
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  @include WIDE {
+    font-size: $font-size-wide;
+  }
+  @include DESKTOP {
+    font-size: $font-size-desktop;
+  }
+  @include TABLET {
+    font-size: $font-size-tablet;
+  }
+  @include MOBILE {
+    font-size: $font-size-mobile;
+  }
+}
+body {
+  background-color: #101010;
+  min-height: 100vh;
+  white-space: pre-line;
+  word-break: keep-all;
+}
+.root {
+  font-family: var(--font-jost), var(--font-pretendard), sans-serif;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+ul,
+ol {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+div,
+a,
+strong,
+span {
+  text-wrap: balance;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+strong {
+  display: block;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  pointer-events: none;
+}
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+button {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}

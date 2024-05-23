@@ -1,0 +1,17 @@
+@import '@/styles/common.scss';
+
+.container {
+  padding-top: 15rem;
+  overflow: hidden;
+
+  > .box {
+    @include wrapper;
+
+    > .title {
+      font-size: 4rem;
+      font-weight: 600;
+      width: fit-content;
+      @include gradientText;
+    }
+  }
+}

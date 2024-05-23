@@ -1,0 +1,109 @@
+// device
+$wide: 1441px;
+$desktop: 1440px;
+$tablet: 1280px;
+$mobile: 768px;
+
+// font-size
+$font-size-wide: 16px;
+$font-size-desktop: 15px;
+$font-size-tablet: 14px;
+$font-size-mobile: 12px;
+
+// responsive
+@mixin WIDE {
+  @media screen and (min-width: $wide) {
+    @content;
+  }
+}
+
+@mixin DESKTOP {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin TABLET {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin MOBILE {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+// hover
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin sidePadding {
+  padding: 0 6.75rem;
+  @include TABLET {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  @include MOBILE {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@mixin wrapper {
+  @include sidePadding;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+@mixin gradientBg($deg) {
+  background: linear-gradient($deg, #005099 0%, #78beff 100%);
+}
+
+@mixin gradientText {
+  background: linear-gradient(90deg, rgba(#0094ff, 1) 0%, rgba(#c6f1ff, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin gradientHoverText($color) {
+  background-image: linear-gradient(to right, $color, $color 33.33333%, #0094ff 66.66666%, #c6f1ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 100%;
+  color: $color;
+  background-position: top left;
+  transition: background-position 0.5s ease-in-out;
+  @include hover {
+    background-position: top left 100%;
+  }
+}
+
+@mixin containerBg() {
+  min-height: 100vh;
+  position: relative;
+  &::before {
+    content: '';
+    z-index: 0;
+    background-image: url('../../public/assets/images/global/noise.png');
+    background-repeat: repeat-y;
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: overlay;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(#6bb2f4, 1) 40vh, rgba(black, 1) 100vh);
+    mix-blend-mode: overlay;
+  }
+}

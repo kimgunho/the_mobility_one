@@ -1,0 +1,18 @@
+@import '@/styles/common.scss';
+
+.container {
+  background-color: black;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  > .wrapper {
+    @include wrapper;
+
+    > .title {
+      font-size: 4rem;
+      font-weight: 600;
+      width: fit-content;
+      @include gradientText;
+    }
+  }
+}
