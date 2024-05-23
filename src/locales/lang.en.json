@@ -59,11 +59,11 @@
     "list_03": "Utilizing M1UCS-based operations for simultaneous control of multiple aircraft, enabling surveys across multiple areas at once",
     "list_04": "Low cost compared to high-cost aerial surveying operations using conventional airplane."
   },
-  "aeroLenze": {
-    "desc_01": "AeroLenze is a service for easily capturing stunning aerial shots without the need to carry a drone, by summoning nearby drones for filming.",
+  "aeroLens": {
+    "desc_01": "AeroLens is a service for easily capturing stunning aerial shots without the need to carry a drone, by summoning nearby drones for filming.",
     "desc_02": "For this service, autonomous drones and unmanned operation stations are managed through Mobility One's M1UCS. Starting with a pilot service on Jeju Island in 2024, we plan to gradually expand.",
     "card01_desc": "Capture Your Special Moments with Drones!",
-    "card02_desc": "No need to carry a drone around, just AeroLenze is enough!",
+    "card02_desc": "No need to carry a drone around, just AeroLens is enough!",
     "card03_desc": "How about we start with AeroLens right now?"
   },
   "company": {

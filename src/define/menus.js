@@ -34,8 +34,8 @@ const MENUS = {
         url: '/survey',
       },
       {
-        title: 'AeroLenze',
-        url: '/aerolenze',
+        title: 'AeroLens',
+        url: '/aerolens',
       },
     ],
   },

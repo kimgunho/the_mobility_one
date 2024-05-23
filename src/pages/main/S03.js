@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import M1UCS from '@/images/main/m1ucs.png';
 import SURVEY from '@/images/main/survey.png';
-import AEROLENZE from '@/images/main/aero_lenze.png';
+import AEROLENS from '@/images/main/aerolens.png';
 
 import styles from './S03.module.scss';
 
@@ -26,9 +26,9 @@ const S03 = () => {
             <p className={cx('label')}>SURVEY</p>
             <Image draggable={false} src={SURVEY} alt="" />
           </Link>
-          <Link href={'/service/aerolenze'} className={cx('content')}>
-            <p className={cx('label')}>AERO LENZE</p>
-            <Image draggable={false} src={AEROLENZE} alt="" />
+          <Link href={'/service/aerolens'} className={cx('content')}>
+            <p className={cx('label')}>AERO LENS</p>
+            <Image draggable={false} src={AEROLENS} alt="" />
           </Link>
         </div>
       </div>

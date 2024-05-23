@@ -18,7 +18,7 @@ const Page = () => {
 
   return (
     <div className={cx('container')}>
-      <SubTop title="WIDE RANGE SURVEY" subTitle="SERVICE" />
+      <SubTop title="Wide Range Survey" subTitle="SERVICE" />
       <div className={cx('wrapper')}>
         <div className={cx('contents')}>
           <strong className={cx('title')}>Wide Range Survey</strong>
