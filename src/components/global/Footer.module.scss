@@ -14,8 +14,10 @@
       border-bottom: 1px solid white;
       gap: 1.5rem;
       @include MOBILE {
-        padding: 60px 0;
         flex-direction: column;
+        padding: 0;
+        padding-top: 8.75rem;
+        border: 0;
       }
 
       > .box {
@@ -28,6 +30,12 @@
             svg {
               color: #0094ff;
             }
+          }
+          @include MOBILE {
+            border-bottom: 1px solid white;
+            width: 100%;
+            padding-bottom: 3rem;
+            margin-bottom: 3rem;
           }
         }
 
@@ -43,7 +51,7 @@
             font-size: 1.25rem;
           }
           @include MOBILE {
-            font-size: 1.125rem;
+            font-size: 1rem;
           }
 
           > svg {
@@ -68,12 +76,18 @@
           @include TABLET {
             font-size: 1.25rem;
           }
+          @include MOBILE {
+            font-size: 1rem;
+          }
         }
         > .tel {
           font-size: 1.5rem;
           @include gradientHoverText(white);
           @include TABLET {
             font-size: 1.25rem;
+          }
+          @include MOBILE {
+            font-size: 1rem;
           }
         }
       }
@@ -84,7 +98,7 @@
     position: relative;
     cursor: none;
     @include MOBILE {
-      padding-top: 6.25rem;
+      padding-top: 10rem;
     }
 
     > .image {
