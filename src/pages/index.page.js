@@ -14,7 +14,7 @@ const Page = () => {
 
   return (
     <div>
-      <Seo title="The Mobility One" description="모빌리티원에 오신걸 환영합니다." />
+      <Seo title="MobilityOne" description="모빌리티원에 오신걸 환영합니다." />
       <div>
         <S01 />
         <S02 />

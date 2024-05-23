@@ -12,7 +12,7 @@
   z-index: 100;
   gap: 1.5rem;
   padding-top: 2.5rem;
-  transition: transform 0.5s;
+  transition: transform 0.2s;
   &.hide {
     transform: translateY(-100%);
   }
@@ -33,6 +33,7 @@
     position: relative;
 
     > .gnb {
+      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
       background-color: white;
       display: flex;
       align-items: center;
@@ -47,17 +48,26 @@
         cursor: pointer;
         padding: 1.5rem 0;
         @include hover {
-          > .link {
-            @include gradientHoverText(black);
-          }
           > .sub {
             visibility: visible;
             opacity: 1;
           }
         }
         > .link {
+          background: linear-gradient(to right, black, black 33.33333%, #005099 66.66666%, #78beff);
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-size: 300% 100%;
+          color: black;
+          background-position: top left;
+          transition: background-position 0.2s ease-in-out;
+          @include hover {
+            background-position: top left 100%;
+          }
           &.active {
-            @include gradientText;
+            background: linear-gradient(90deg, #005099 0%, #78beff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
           }
         }
         > .sub {
@@ -78,9 +88,20 @@
 
           > li {
             > .link {
-              @include gradientHoverText(black);
+              background: linear-gradient(to right, black, black 33.33333%, #005099 66.66666%, #78beff);
+              background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-size: 300% 100%;
+              color: black;
+              background-position: top left;
+              transition: background-position 0.2s ease-in-out;
+              @include hover {
+                background-position: top left 100%;
+              }
               &.active {
-                @include gradientText;
+                background: linear-gradient(90deg, #005099 0%, #78beff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
               }
             }
           }

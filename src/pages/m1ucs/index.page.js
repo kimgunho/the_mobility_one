@@ -14,7 +14,7 @@ const cx = classNames.bind(styles);
 const Page = () => {
   return (
     <div className={cx('container')}>
-      <SubTop title="M1UCS" subTitle="MOBILITY ONE" />
+      <SubTop title="M1UCS" subTitle="MOBILITYONE" />
       <div className={cx('wrapper')}>
         <div className={cx('contents')}>
           <S01 />

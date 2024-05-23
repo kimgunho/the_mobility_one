@@ -29,7 +29,7 @@ const Footer = () => {
     <footer className={cx('container')}>
       <div className={cx('wrapper')}>
         <div className={cx('top')}>
-          <Link href="/company#form" className={cx('box')}>
+          <Link href="/company#form" className={cx(['box', 'hover'])}>
             <span className={cx('text')}>
               CONNECT WITH MOBILITYONE <RiArrowRightUpLine size={28} />
             </span>

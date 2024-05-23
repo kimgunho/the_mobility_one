@@ -16,7 +16,7 @@ const S01 = () => {
         <div className={cx('image')}>
           <Image src={LOGO_LARGE} alt="" />
         </div>
-        <p>MOBILITY ONE</p>
+        <p>MOBILITYONE</p>
       </div>
       <p className={cx('bold')}>{t('company.S01_title')}</p>
       <p className={cx('text')}>{t('company.S01_desc')}</p>
