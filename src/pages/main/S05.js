@@ -33,7 +33,7 @@ const S05 = () => {
             ))}
         </ul>
         <div className={cx('box')}>
-          <RoundButton text="MORE VIEW" href="/news" />
+          <RoundButton text="VIEW ALL" href="/news" />
         </div>
       </div>
     </div>

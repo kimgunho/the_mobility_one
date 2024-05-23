@@ -31,78 +31,76 @@ const cx = classNames.bind(styles);
 const Partners = () => {
   return (
     <div className={cx('container')}>
-      {Array(2)
-        .fill()
-        .map((_, i) => (
-          <ul key={i} className={cx('list')}>
-            <li>
-              <Image src={BTE} alt="" />
-            </li>
-            <li>
-              <Image src={DOOSAN} alt="" />
-            </li>
-            <li>
-              <Image src={NAMYANG} alt="" />
-            </li>
-            <li>
-              <Image src={GHOST_ROBOTICS} alt="" />
-            </li>
-            <li>
-              <Image src={WEFLO} alt="" />
-            </li>
-            <li>
-              <Image src={SMATII} alt="" />
-            </li>
-            <li>
-              <Image src={AERO_SPACE_UNI} alt="" />
-            </li>
-            <li>
-              <Image src={FLYGROUND} alt="" />
-            </li>
-            <li>
-              <Image src={FEELTEK} alt="" />
-            </li>
-            <li>
-              <Image src={RIFATRON} alt="" />
-            </li>
-            <li>
-              <Image src={AIRON} alt="" />
-            </li>
-            <li>
-              <Image src={DRSYS} alt="" />
-            </li>
-            <li>
-              <Image src={DSPECTER} alt="" />
-            </li>
-            <li>
-              <Image src={ASSETTA} alt="" />
-            </li>
-            <li>
-              <Image src={ARDENT} alt="" />
-            </li>
-            <li>
-              <Image src={SHECO} alt="" />
-            </li>
-            <li>
-              <Image src={GLOBAL_KOREA} alt="" />
-            </li>
-            <li>
-              <Image src={QUATERNION} alt="" />
-            </li>
-            <li>
-              <Image src={RENEU} alt="" />
-            </li>
-            <li>
-              <Image src={NEUROMEKA} alt="" />
-            </li>
-            <li>
-              <Image src={RKM} alt="" />
-            </li>
-            <li>
-              <Image src={THIRDEYE} alt="" />
-            </li>
-          </ul>
-        ))}
+      <ul className={cx('list')}>
+        <li>
+          <Image src={DRSYS} alt="" />
+        </li>
+        <li>
+          <Image src={DSPECTER} alt="" />
+        </li>
+        <li>
+          <Image src={ASSETTA} alt="" />
+        </li>
+        <li>
+          <Image src={ARDENT} alt="" />
+        </li>
+        <li>
+          <Image src={SHECO} alt="" />
+        </li>
+        <li>
+          <Image src={GLOBAL_KOREA} alt="" />
+        </li>
+        <li>
+          <Image src={QUATERNION} alt="" />
+        </li>
+        <li>
+          <Image src={RENEU} alt="" />
+        </li>
+        <li>
+          <Image src={NEUROMEKA} alt="" />
+        </li>
+        <li>
+          <Image src={RKM} alt="" />
+        </li>
+        <li>
+          <Image src={THIRDEYE} alt="" />
+        </li>
+      </ul>
+      <ul className={cx('list')}>
+        <li>
+          <Image src={BTE} alt="" />
+        </li>
+        <li>
+          <Image src={DOOSAN} alt="" />
+        </li>
+        <li>
+          <Image src={NAMYANG} alt="" />
+        </li>
+        <li>
+          <Image src={GHOST_ROBOTICS} alt="" />
+        </li>
+        <li>
+          <Image src={WEFLO} alt="" />
+        </li>
+        <li>
+          <Image src={SMATII} alt="" />
+        </li>
+        <li>
+          <Image src={AERO_SPACE_UNI} alt="" />
+        </li>
+        <li>
+          <Image src={FLYGROUND} alt="" />
+        </li>
+        <li>
+          <Image src={FEELTEK} alt="" />
+        </li>
+        <li>
+          <Image src={RIFATRON} alt="" />
+        </li>
+        <li>
+          <Image src={AIRON} alt="" />
+        </li>
+      </ul>
     </div>
   );
 };

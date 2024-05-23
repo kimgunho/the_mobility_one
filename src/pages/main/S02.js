@@ -62,7 +62,7 @@ const S02 = () => {
           trigger: section,
           scrub: true,
           start: 'center bottom',
-          end: 'center center',
+          end: 'center 30%',
         },
       });
 
