@@ -14,7 +14,9 @@
   padding-top: 2.5rem;
   transition: transform 0.2s;
   &.hide {
-    transform: translateY(-100%);
+    @media screen and (min-width: $mobile) {
+      transform: translateY(-100%);
+    }
   }
 
   > .logo {
@@ -27,81 +29,171 @@
       height: auto;
     }
   }
+  > .hamburger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: transparent;
+    @include MOBILE {
+      display: flex;
+    }
+  }
   > .wrapper {
     flex: 1;
     max-width: 56.25rem;
     position: relative;
-
+    @include MOBILE {
+      background-color: #101010;
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      max-width: 100%;
+      visibility: hidden;
+      overflow-y: scroll;
+      height: calc(100vh + 80px);
+      padding-bottom: 100px;
+      &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background-image: url('../../../public/assets/images/global/noise.png');
+        background-repeat: repeat-y;
+        mix-blend-mode: overlay;
+      }
+      &::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        mix-blend-mode: overlay;
+        background: linear-gradient(172deg, rgba(0, 0, 0, 1) 31%, rgba(107, 178, 244, 1) 68%, rgba(0, 0, 0, 1) 100%);
+      }
+      &.visible {
+        visibility: visible;
+      }
+    }
     > .gnb {
-      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-      background-color: white;
       display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      border-radius: 3.75rem;
-      position: relative;
+      @include OVER_MOBILE {
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+        background-color: white;
+        align-items: center;
+        justify-content: space-evenly;
+        border-radius: 3.75rem;
+        position: relative;
+      }
+      @include MOBILE {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        padding-top: 10rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
 
       > li {
         font-size: 1.125rem;
         font-weight: 600;
         user-select: none;
         cursor: pointer;
-        padding: 1.5rem 0;
-        @include hover {
-          > .sub {
-            visibility: visible;
-            opacity: 1;
+        @include OVER_MOBILE {
+          padding: 1.5rem 0;
+          @include hover {
+            > .sub {
+              visibility: visible;
+              opacity: 1;
+            }
           }
         }
-        > .link {
-          background: linear-gradient(to right, black, black 33.33333%, #005099 66.66666%, #78beff);
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-size: 300% 100%;
-          color: black;
-          background-position: top left;
-          transition: background-position 0.2s ease-in-out;
-          @include hover {
-            background-position: top left 100%;
+        @include MOBILE {
+          padding: 0;
+        }
+        &.mobileLang {
+          > .button {
+            @include MOBILE {
+              display: flex;
+              font-size: 2.25rem;
+              font-weight: 300;
+              padding: 0.75rem 2.25rem;
+              width: fit-content;
+            }
           }
-          &.active {
-            background: linear-gradient(90deg, #005099 0%, #78beff 100%);
-            -webkit-background-clip: text;
+        }
+
+        > .link {
+          @include OVER_MOBILE {
+            background: linear-gradient(to right, black, black 33.33333%, #005099 66.66666%, #78beff);
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-size: 300% 100%;
+            color: black;
+            background-position: top left;
+            transition: background-position 0.2s ease-in-out;
+            @include hover {
+              background-position: top left 100%;
+            }
+            &.active {
+              background: linear-gradient(90deg, #005099 0%, #78beff 100%);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+          @include MOBILE {
+            font-size: 3.25rem;
+            display: block;
+            @include gradientText;
           }
         }
         > .sub {
-          visibility: hidden;
-          opacity: 0;
-          transition: all 0.2s;
-          position: absolute;
-          left: 50%;
-          top: calc(100% + 8px);
-          width: 80%;
-          height: 100%;
-          transform: translateX(-50%);
-          background-color: rgba(white, 0.85);
-          display: flex;
-          align-items: center;
-          justify-content: space-evenly;
-          border-radius: 1.25rem;
-
+          @include OVER_MOBILE {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.2s;
+            position: absolute;
+            left: 50%;
+            top: calc(100% + 8px);
+            width: 80%;
+            height: 100%;
+            transform: translateX(-50%);
+            background-color: rgba(white, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 1.25rem;
+          }
+          @include MOBILE {
+            position: initial;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+          }
           > li {
             > .link {
-              background: linear-gradient(to right, black, black 33.33333%, #005099 66.66666%, #78beff);
-              background-clip: text;
-              -webkit-text-fill-color: transparent;
-              background-size: 300% 100%;
-              color: black;
-              background-position: top left;
-              transition: background-position 0.2s ease-in-out;
-              @include hover {
-                background-position: top left 100%;
-              }
-              &.active {
-                background: linear-gradient(90deg, #005099 0%, #78beff 100%);
-                -webkit-background-clip: text;
+              @include OVER_MOBILE {
+                background: linear-gradient(to right, black, black 33.33333%, #005099 66.66666%, #78beff);
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
+                background-size: 300% 100%;
+                color: black;
+                background-position: top left;
+                transition: background-position 0.2s ease-in-out;
+                @include hover {
+                  background-position: top left 100%;
+                }
+                &.active {
+                  background: linear-gradient(90deg, #005099 0%, #78beff 100%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                }
+              }
+              @include MOBILE {
+                color: white;
+                font-weight: 300;
+                font-size: 2.25rem;
               }
             }
           }
@@ -109,7 +201,7 @@
       }
     }
   }
-  > .button {
+  .button {
     width: 3.875rem;
     height: 3.125rem;
     display: flex;
@@ -119,5 +211,8 @@
     background-color: rgba(white, 0.2);
     border-radius: 1.875rem;
     font-size: 1.125rem;
+    @include MOBILE {
+      display: none;
+    }
   }
 }

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import { RiCloseFill, RiMenuFill } from 'react-icons/ri';
 
 import LOGO from '@/images/global/logo.png';
 import menus from '@/define/menus';
@@ -16,6 +17,13 @@ const Header = () => {
   const { i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
   const [hide, setHide] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (visible) {
+      setVisible(false);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     window.addEventListener('scroll', scroll);
@@ -38,6 +46,13 @@ const Header = () => {
   };
 
   const toggle = () => {
+    setVisible(!visible);
+  };
+
+  const changeLanguage = () => {
+    if (visible) {
+      setVisible(false);
+    }
     if (lang === 'ko') {
       i18n.changeLanguage('en');
       localStorage.setItem('@m1/lang', 'en');
@@ -54,7 +69,10 @@ const Header = () => {
       <Link className={cx('logo')} href="/">
         <Image src={LOGO} alt="" />
       </Link>
-      <div className={cx('wrapper')}>
+      <button onClick={toggle} className={cx('hamburger')}>
+        {visible ? <RiCloseFill size={48} /> : <RiMenuFill size={48} />}
+      </button>
+      <div className={cx('wrapper', { visible })}>
         <ul className={cx('gnb')}>
           {menus.map((menu) => {
             const menuActive = pathname?.includes(menu.url);
@@ -87,9 +105,14 @@ const Header = () => {
               </li>
             );
           })}
+          <li className={cx('mobileLang')}>
+            <button onClick={changeLanguage} className={cx('button')} type="button">
+              {lang === 'ko' ? 'EN' : 'KR'}
+            </button>
+          </li>
         </ul>
       </div>
-      <button onClick={toggle} className={cx('button')} type="button">
+      <button onClick={changeLanguage} className={cx('button')} type="button">
         {lang === 'ko' ? 'EN' : 'KR'}
       </button>
     </header>

@@ -35,6 +35,12 @@ $font-size-mobile: 12px;
   }
 }
 
+@mixin OVER_MOBILE {
+  @media screen and (min-width: $mobile) {
+    @content;
+  }
+}
+
 // hover
 @mixin hover {
   @media (hover: hover) {
