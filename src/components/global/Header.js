@@ -18,20 +18,23 @@ const Header = () => {
   const [hide, setHide] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('wheel', scroll);
+    window.addEventListener('scroll', scroll);
+    window.addEventListener('wheel', wheel);
 
     return () => {
-      window.removeEventListener('wheel', scroll);
+      window.removeEventListener('scroll', scroll);
+      window.removeEventListener('wheel', wheel);
     };
   }, []);
 
-  const scroll = (e) => {
+  const wheel = (e) => {
+    e.deltaY < 0 && e.deltaX === 0 ? setHide(false) : setHide(true);
+  };
+
+  const scroll = () => {
     if (window.scrollY === 0) {
       setHide(false);
-      return;
     }
-
-    e.deltaY < 0 && e.deltaX === 0 ? setHide(false) : setHide(true);
   };
 
   const toggle = () => {
