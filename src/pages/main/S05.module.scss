@@ -19,6 +19,13 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
       grid-gap: 1.5rem;
+      @include TABLET {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include MOBILE {
+        grid-template-columns: repeat(1, 1fr);
+        aspect-ratio: 2 / 5;
+      }
 
       > li {
         position: relative;
@@ -31,6 +38,16 @@
           background-image: linear-gradient(#fff, #fff), linear-gradient(0deg, #78beff 0%, #005099 100%);
           img {
             transform: scale(1.05);
+          }
+        }
+        @include TABLET {
+          &:last-of-type {
+            display: none;
+          }
+        }
+        @include MOBILE {
+          &:last-of-type {
+            display: block;
           }
         }
 
@@ -69,6 +86,7 @@
           }
           > .image {
             width: 100%;
+            height: 100%;
 
             > img {
               width: 100%;

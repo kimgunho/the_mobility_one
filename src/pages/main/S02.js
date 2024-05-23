@@ -57,6 +57,7 @@ const S02 = () => {
   useEffect(() => {
     sectionsRef.current.forEach((section) => {
       const desc = section.querySelector('[data-desc]');
+      const pictogram = section.querySelector('[data-pictogram]');
       const timeline = gsap.timeline({
         scrollTrigger: {
           trigger: section,
@@ -68,6 +69,7 @@ const S02 = () => {
 
       timeline
         .fromTo(desc, { opacity: 0 }, { opacity: 1 }, 0)
+        .fromTo(pictogram, { opacity: 0 }, { opacity: 1 }, 0)
         .to(section, { className: cx(['section', 'overlap']) }, 0);
     });
 
@@ -136,6 +138,11 @@ const S02 = () => {
           </div>
           <div className={cx('right')}>
             <p data-desc>{section.desc}</p>
+            {section.pictogram && (
+              <div data-pictogram className={cx('pictogram')}>
+                <Image src={section.pictogram} alt="" />
+              </div>
+            )}
           </div>
         </div>
       ))}

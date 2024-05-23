@@ -13,9 +13,19 @@
   gap: 1.5rem;
   padding-top: 2.5rem;
   transition: transform 0.2s;
-  &.hide {
-    @media screen and (min-width: $mobile) {
+  @include OVER_MOBILE {
+    &.hide {
       transform: translateY(-100%);
+    }
+  }
+  @include MOBILE {
+    &::after {
+      position: absolute;
+      backdrop-filter: blur(10px);
+      content: '';
+      inset: 0;
+      z-index: -1;
+      mask: linear-gradient(0deg, transparent, white 20%, white 80%);
     }
   }
 

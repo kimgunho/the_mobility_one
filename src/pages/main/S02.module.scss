@@ -35,6 +35,9 @@
     right: 6.75rem;
     top: calc(50vh - 250px);
     bottom: calc(50vh - 250px);
+    @include MOBILE {
+      display: none;
+    }
 
     > .track {
       overflow: hidden;
@@ -61,6 +64,9 @@
     display: flex;
     position: relative;
     z-index: 10;
+    @include TABLET {
+      flex-direction: column;
+    }
     &.overlap {
       > .left > .pictogram {
         opacity: 0;
@@ -70,6 +76,9 @@
 
     > * {
       width: 50%;
+      @include TABLET {
+        width: 100%;
+      }
       &.left {
         display: flex;
         flex-direction: column;
@@ -105,6 +114,9 @@
           visibility: visible;
           opacity: 1;
           transition: all 0.2s;
+          @include MOBILE {
+            display: none;
+          }
 
           > img {
             width: 100%;
@@ -114,12 +126,35 @@
       }
       &.right {
         padding-right: 8.125rem;
+        @include MOBILE {
+          padding-right: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 80px;
+        }
 
         > p {
           margin-top: 3.1875rem;
-          font-size: 32px;
+          font-size: 2rem;
           color: white;
           line-height: 1.6;
+        }
+        > .pictogram {
+          width: 100%;
+          max-width: 15rem;
+          margin-left: 3rem;
+          visibility: visible;
+          opacity: 1;
+          transition: all 0.2s;
+          display: none;
+          @include TABLET {
+            display: block;
+          }
+
+          > img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }

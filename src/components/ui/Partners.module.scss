@@ -15,11 +15,23 @@
     width: max-content;
     overflow: hidden;
     user-select: none;
-    &:first-of-type {
+    &.desktop {
+      @include MOBILE {
+        display: none;
+      }
+    }
+    &.mobile {
+      display: none;
+      @include MOBILE {
+        display: flex;
+      }
+    }
+    &:nth-of-type(odd) {
       animation: scroll 50s reverse linear infinite;
       margin-left: 98px;
     }
-    &:last-of-type {
+
+    &:nth-of-type(even) {
       animation: scroll 50s linear infinite;
     }
 
