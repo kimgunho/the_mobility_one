@@ -1,8 +1,72 @@
 @import '@/styles/common.scss';
 
 .container {
+  position: relative;
   @include containerBg;
 
+  > .button {
+    position: sticky;
+    z-index: 3;
+    left: 50%;
+    top: 90vh;
+    transform: translateX(-50%);
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    border: 2px solid white;
+    background: linear-gradient(90deg, #001751 0%, #0032b4 51%, #00132f 100%);
+    padding: 1rem;
+    border-radius: 2.9375rem;
+    overflow: hidden;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transition: all 0.2s;
+      opacity: 0;
+      z-index: -1;
+      @include gradientBg(105deg);
+    }
+    @include hover {
+      border-color: rgba(white, 0.5);
+      &::after {
+        opacity: 1;
+      }
+      > .link {
+        background-color: white;
+
+        > .text {
+          @include gradientText;
+        }
+      }
+    }
+
+    > p {
+      padding-left: 2.5rem;
+      font-size: 2rem;
+      font-weight: 300;
+      color: white;
+    }
+    > .link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9375rem 2rem;
+      transition: all 0.2s;
+      background-color: transparent;
+      border-radius: 2.3125rem;
+      border: 1px solid white;
+      line-height: 1;
+
+      > .text {
+        color: white;
+        font-weight: 600;
+        font-size: 2rem;
+      }
+    }
+  }
   > .wrapper {
     position: relative;
     z-index: 2;

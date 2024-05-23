@@ -1,51 +1,18 @@
 @import '@/styles/common.scss';
 
 .container {
+  position: relative;
+
   > .top {
     position: relative;
+    border-radius: 1.25rem;
+    width: 100%;
+    overflow: hidden;
 
-    > .button {
-      position: absolute;
-      left: 50%;
-      top: 9.375rem;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 3rem;
-      border: 2px solid white;
-      background: linear-gradient(90deg, #001751 0%, #0032b4 51%, #00132f 100%);
-      padding: 1rem;
-      border-radius: 2.9375rem;
-
-      > p {
-        padding-left: 2.5rem;
-        font-size: 2rem;
-        color: white;
-      }
-      > a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 600;
-        font-size: 2rem;
-        padding: 0.9375rem 2rem;
-        border-radius: 2.3125rem;
-        border: 1px solid white;
-        line-height: 1;
-      }
-    }
-    > .image {
-      border-radius: 1.25rem;
+    > img {
       width: 100%;
-      overflow: hidden;
-
-      > img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-      }
+      height: auto;
+      object-fit: cover;
     }
   }
   > .bold {

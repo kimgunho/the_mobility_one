@@ -17,11 +17,14 @@ const S05 = () => {
   const slickRef = useRef();
 
   const settings = {
+    className: cx('variable'),
     centerMode: true,
     arrows: false,
     centerPadding: '100px',
     slidesToShow: 1,
+    infinite: false,
     speed: 500,
+    variableWidth: true,
   };
 
   const prev = () => {

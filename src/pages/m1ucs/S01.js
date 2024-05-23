@@ -15,15 +15,7 @@ const S01 = () => {
   return (
     <div className={cx('container')}>
       <div className={cx('top')}>
-        <div className={cx('button')}>
-          <p>Let’s Start</p>
-          <a className={cx('link')} href={M1UCS_DOMAIN} target="_blank" rel="noreferrer">
-            M1UCS
-          </a>
-        </div>
-        <div className={cx('image')}>
-          <Image src={M1UCS_IMG} alt="" />
-        </div>
+        <Image src={M1UCS_IMG} alt="" />
       </div>
       <strong className={cx('bold')}>{t('m1ucs.S01_title')}</strong>
       <p className={cx('desc')}>{t('m1ucs.S01_desc')}</p>

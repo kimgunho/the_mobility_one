@@ -46,16 +46,16 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className={cx('bottom')} onClick={scrollTop} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
-          <div className={cx('image')}>
-            <Image src={TEXT_BG} alt="" />
-          </div>
-          <div
-            className={cx('cursor', { visible: position })}
-            type="button"
-            style={{ left: position?.left, top: position?.top }}>
-            SCROLL TO TOP
-          </div>
+      </div>
+      <div className={cx('bottom')} onClick={scrollTop} onMouseMove={onMouseMove} onMouseLeave={onMouseLeave}>
+        <div className={cx('image')}>
+          <Image src={TEXT_BG} alt="" />
+        </div>
+        <div
+          className={cx('cursor', { visible: position })}
+          type="button"
+          style={{ left: position?.left, top: position?.top }}>
+          SCROLL TO TOP
         </div>
       </div>
       <div className={cx('noise')} />
