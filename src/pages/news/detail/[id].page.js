@@ -25,14 +25,14 @@ const Page = () => {
         </div>
         <div className={cx('buttons')}>
           <Link className={cx('button')} href={'/news'}>
-            LIST
+            <span>LIST</span>
           </Link>
           <div className={cx('box')}>
             <Link className={cx('button')} href="/news/detail/aaa">
-              PREVIOUS
+              <span>PREVIOUS</span>
             </Link>
             <Link className={cx('button')} href="/news/detail/aaa">
-              NEXT
+              <span>NEXT</span>
             </Link>
           </div>
         </div>
