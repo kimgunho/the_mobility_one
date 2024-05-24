@@ -2,9 +2,9 @@ import classNames from 'classnames/bind';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import M1UCS from '@/images/main/m1ucs.png';
-import SURVEY from '@/images/main/survey.png';
-import AEROLENS from '@/images/main/aerolens.png';
+import M1UCS from '@/images/main/m1ucs.jpg';
+import SURVEY from '@/images/main/survey.jpg';
+import AEROLENS from '@/images/main/aerolens.jpg';
 
 import styles from './S03.module.scss';
 

@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import classNames from 'classnames/bind';
 
-import SURVEY_BG from '@/images/m1ucs/survey_bg.png';
+import SURVEY_BG from '@/images/m1ucs/survey_bg.jpg';
 import styles from './UseCase01.module.scss';
 
 const cx = classNames.bind(styles);

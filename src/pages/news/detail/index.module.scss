@@ -56,19 +56,9 @@
         padding: 1.5rem 4.375rem;
         position: relative;
         overflow: hidden;
-        &::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          transition: all 0.2s;
-          opacity: 0;
-          @include gradientBg(105deg);
-        }
+        transition: background-color 0.2s;
         @include hover {
-          border-color: rgba(white, 0.1);
-          &::after {
-            opacity: 1;
-          }
+          background-color: rgba(white, 0.2);
         }
 
         > span {

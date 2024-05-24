@@ -91,13 +91,15 @@ const S04 = () => {
           </div>
           <label className={cx('field')}>
             <p className={cx('label', 'required')}>Message</p>
-            <input onChange={handleChange} required name="message" type="text" />
+            <textarea onChange={handleChange} required name="message" className={cx('message')}></textarea>
           </label>
           <div className={cx('right')}>
             <label htmlFor="agree" className={cx('agree')}>
               <input name="agree" onChange={handleChange} required id="agree" hidden type="checkbox" />
               <div className={cx('checkbox')} />
-              <p className={cx('text')}>I agree with your Privacy Policy.</p>
+              <p className={cx('text')}>
+                I agree with your <span className={cx('line')}>Privacy Policy.</span>
+              </p>
             </label>
           </div>
           <button onClick={sendEmail} className={cx('submit')} type="submit">
