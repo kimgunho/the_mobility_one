@@ -10,6 +10,9 @@
     position: relative;
 
     > .controls {
+      @include TABLET {
+        display: none;
+      }
       > .button {
         position: absolute;
         top: 0;
@@ -48,6 +51,9 @@
               padding: 0 12px;
               width: 100%;
               max-width: 1728px;
+              @include MOBILE {
+                padding: 0 2rem;
+              }
 
               @media screen and (min-width: 1704px) {
                 min-width: 1728px;
