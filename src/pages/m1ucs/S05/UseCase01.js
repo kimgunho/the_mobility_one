@@ -26,6 +26,7 @@ const UseCase01 = () => {
   return (
     <>
       <div className={cx('container')}>
+        {videoSrc && <VideoModal src={videoSrc} close={hideVideo} />}
         <div className={cx('left')}>
           <div className={cx('top')}>
             <p className={cx('subTitle')}>Use case</p>
@@ -74,7 +75,6 @@ const UseCase01 = () => {
           </div>
         </div>
       </div>
-      {videoSrc && <VideoModal src={videoSrc} close={hideVideo} />}
     </>
   );
 };

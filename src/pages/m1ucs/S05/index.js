@@ -7,6 +7,10 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import styles from './index.module.scss';
 import UseCase01 from './UseCase01';
+import UseCase02 from './UseCase02';
+import UseCase03 from './UseCase03';
+import UseCase04 from './UseCase04';
+import UseCase05 from './UseCase05';
 
 const cx = classNames.bind(styles);
 
@@ -17,9 +21,9 @@ const S05 = () => {
     className: cx('variable'),
     centerMode: true,
     arrows: false,
-    centerPadding: '100px',
+    centerPadding: '0px',
     slidesToShow: 1,
-    infinite: false,
+    infinite: true,
     speed: 500,
     variableWidth: true,
   };
@@ -44,7 +48,21 @@ const S05 = () => {
           </button>
         </div>
         <Slider ref={(slider) => (slickRef.current = slider)} {...settings}>
-          <UseCase01 />
+          <div className={cx('swipe')}>
+            <UseCase01 />
+          </div>
+          <div className={cx('swipe')}>
+            <UseCase02 />
+          </div>
+          <div className={cx('swipe')}>
+            <UseCase03 />
+          </div>
+          <div className={cx('swipe')}>
+            <UseCase04 />
+          </div>
+          <div className={cx('swipe')}>
+            <UseCase05 />
+          </div>
         </Slider>
       </div>
     </div>

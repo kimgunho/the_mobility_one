@@ -1,11 +1,11 @@
 @import '@/styles/common.scss';
 
 .container {
-  position: fixed;
-  inset: 0 10px;
-  z-index: 1;
+  position: absolute;
+  overflow: hidden;
+  inset: 0;
+  z-index: 10;
   background-color: rgba(black, 0.8);
-  border-radius: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
