@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import GlobalLayout from '@/components/layout/GlobalLayout';
 import AEROLENS from '@/images/service/aerolens/aerolens.png';
+import AEROLENS_MOBILE from '@/images/service/aerolens/aerolens_mobile.png';
 import AEROLENS_MAIN_01 from '@/images/service/aerolens/AeroLens_main_01.png';
 import AEROLENS_MAIN_02 from '@/images/service/aerolens/AeroLens_main_02.png';
 import AEROLENS_MAIN_03 from '@/images/service/aerolens/AeroLens_main_03.png';
@@ -23,7 +24,8 @@ const Page = () => {
           <strong className={cx('title')}>AeroLens</strong>
           <p className={cx('desc')}>{t('aeroLens.desc_01')}</p>
           <div className={cx('top')}>
-            <Image src={AEROLENS} alt="" />
+            <Image className={cx('desktop')} src={AEROLENS} alt="" />
+            <Image className={cx('tablet')} src={AEROLENS_MOBILE} alt="" />
           </div>
           <div className={cx('bottom')}>
             <div className={cx('left')}>
