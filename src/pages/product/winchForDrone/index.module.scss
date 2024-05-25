@@ -2,6 +2,9 @@
 
 .container {
   @include containerBg;
+  @include MOBILE {
+    padding-bottom: 0;
+  }
 
   > .wrapper {
     position: relative;
@@ -9,11 +12,18 @@
     @include wrapper;
     margin-top: 6.25rem;
     padding-bottom: 10rem;
+    @include TABLET {
+      padding: 0;
+    }
 
     > .contents {
       background-color: #172533;
       padding: 5rem;
       border-radius: 2.5rem;
+      @include MOBILE {
+        padding: 5rem 2rem;
+        border-radius: 2.5rem 2.5rem 0 0;
+      }
 
       > .top {
         > .title {
@@ -26,6 +36,17 @@
         > .image {
           width: 100%;
           height: 100%;
+          &.desktop {
+            @include TABLET {
+              display: none;
+            }
+          }
+          &.tablet {
+            display: none;
+            @include TABLET {
+              display: block;
+            }
+          }
 
           > img {
             height: 100%;
@@ -36,15 +57,23 @@
       }
       > .center {
         margin-top: 5rem;
-        display: grid;
-        grid-template-columns: 25rem 1fr 1fr;
+        display: flex;
         gap: 1.5rem;
-        grid-gap: 1.5rem;
+        @include TABLET {
+          flex-direction: column;
+        }
+        @include MOBILE {
+          gap: 2rem;
+        }
 
         > div {
+          width: 33.3334%;
           background-color: rgba(black, 0.3);
           padding: 2.5rem;
           border-radius: 1.5rem;
+          @include TABLET {
+            width: 100%;
+          }
           &.left {
             display: flex;
             align-items: center;
@@ -54,6 +83,11 @@
               width: 100%;
               height: 100%;
               object-fit: contain;
+            }
+          }
+          &.right {
+            @include TABLET {
+              display: none;
             }
           }
 
@@ -71,6 +105,12 @@
               display: flex;
               align-items: center;
               gap: 24px;
+              &.tablet {
+                display: none;
+                @include TABLET {
+                  display: flex;
+                }
+              }
 
               > span {
                 color: white;
@@ -90,6 +130,9 @@
         border-radius: 1.5rem;
         padding: 4rem;
         background-color: black;
+        @include MOBILE {
+          padding: 2rem;
+        }
       }
     }
   }

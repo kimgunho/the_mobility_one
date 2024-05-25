@@ -122,6 +122,10 @@
           padding: 0;
         }
         &.mobileLang {
+          display: none;
+          @include MOBILE {
+            display: block;
+          }
           > .button {
             @include MOBILE {
               display: flex;

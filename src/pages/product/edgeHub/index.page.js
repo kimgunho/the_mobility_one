@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Edgehub = () => {
+const Page = () => {
   const { t } = useTranslation();
 
   return (
@@ -58,6 +58,6 @@ const Edgehub = () => {
   );
 };
 
-Edgehub.getLayout = (page) => <GlobalLayout>{page}</GlobalLayout>;
+Page.getLayout = (page) => <GlobalLayout>{page}</GlobalLayout>;
 
-export default Edgehub;
+export default Page;
