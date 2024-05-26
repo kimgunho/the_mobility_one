@@ -16,13 +16,13 @@
     overflow: hidden;
     user-select: none;
     &.desktop {
-      @include MOBILE {
+      @include TABLET {
         display: none;
       }
     }
-    &.mobile {
+    &.tablet {
       display: none;
-      @include MOBILE {
+      @include TABLET {
         display: flex;
       }
     }

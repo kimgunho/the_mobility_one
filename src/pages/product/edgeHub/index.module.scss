@@ -2,6 +2,9 @@
 
 .container {
   @include containerBg;
+  @include MOBILE {
+    padding-bottom: 0;
+  }
 
   > .wrapper {
     position: relative;
@@ -9,21 +12,35 @@
     @include wrapper;
     margin-top: 6.25rem;
     padding-bottom: 10rem;
+    @include TABLET {
+      padding: 0;
+    }
 
     > .contents {
       background-color: #172533;
       padding: 5rem;
       border-radius: 2.5rem;
+      @include MOBILE {
+        padding: 2rem;
+        border-radius: 2.5rem 2.5rem 0 0;
+      }
 
       > .top {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         gap: 1.5rem;
+        @include TABLET {
+          flex-direction: column;
+          gap: 5rem;
+        }
 
         > .image {
           width: calc(100% - 21.5rem);
           max-width: 1100px;
+          @include TABLET {
+            width: 100%;
+          }
 
           > img {
             width: 100%;
@@ -40,6 +57,9 @@
           border-radius: 1.5rem;
           background-color: rgba(black, 0.3);
           padding: 2.5rem;
+          @include TABLET {
+            width: 100%;
+          }
 
           > li {
             > strong {
@@ -60,6 +80,13 @@
         border-radius: 1.5rem;
         padding: 4rem;
         background-color: black;
+        @include TABLET {
+          margin-top: 5rem;
+        }
+        @include MOBILE {
+          margin-top: 2rem;
+          padding: 2rem;
+        }
       }
     }
   }

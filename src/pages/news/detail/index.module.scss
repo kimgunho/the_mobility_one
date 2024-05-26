@@ -10,12 +10,24 @@
     max-width: 1344px;
     padding: 0 6.75rem;
     margin: 6.25rem auto 7.5rem;
+    @include TABLET {
+      background-color: #172533;
+      padding-bottom: 10rem;
+      border-radius: 2.5rem 2.5rem 0 0;
+    }
+    @include MOBILE {
+      padding: 0 2rem 5rem;
+    }
 
     > .contents {
       background-color: #172533;
       padding: 7.5rem 5rem;
       border-radius: 2.5rem;
       margin-bottom: 2.5rem;
+      @include TABLET {
+        border-radius: 0;
+        padding: 5rem 0;
+      }
 
       > .publishedAt {
         width: fit-content;
@@ -56,19 +68,12 @@
         padding: 1.5rem 4.375rem;
         position: relative;
         overflow: hidden;
-        &::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          transition: all 0.2s;
-          opacity: 0;
-          @include gradientBg(105deg);
-        }
+        transition: background-color 0.2s;
         @include hover {
-          border-color: rgba(white, 0.1);
-          &::after {
-            opacity: 1;
-          }
+          background-color: rgba(white, 0.2);
+        }
+        @include MOBILE {
+          padding: 1rem 1.5rem;
         }
 
         > span {

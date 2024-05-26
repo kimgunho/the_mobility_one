@@ -87,7 +87,7 @@
     > .gnb {
       display: flex;
       @include OVER_MOBILE {
-        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
         background-color: white;
         align-items: center;
         justify-content: space-evenly;
@@ -122,6 +122,10 @@
           padding: 0;
         }
         &.mobileLang {
+          display: none;
+          @include MOBILE {
+            display: block;
+          }
           > .button {
             @include MOBILE {
               display: flex;

@@ -1,0 +1,71 @@
+@import '@/styles/common.scss';
+
+.container {
+  padding: 4rem;
+  display: flex;
+  gap: 2.5rem;
+  height: 61rem;
+
+  > .left {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6.25rem;
+
+    > .top {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      > .subTitle {
+        font-size: 1.25rem;
+        color: #54687c;
+      }
+      > .title {
+        font-size: 3rem;
+        font-weight: 600;
+        color: #54687c;
+        line-height: 1.2;
+      }
+      > .desc {
+        color: #54687c;
+        font-size: 1.25rem;
+      }
+    }
+    > .bottom {
+      > .list {
+        > li {
+          border-top: 1px solid #54687c;
+          padding: 1.5rem 0;
+
+          > strong {
+            font-size: 1.5rem;
+            color: black;
+            font-weight: 600;
+          }
+          > p {
+            margin-top: 8px;
+            font-size: 1.125rem;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  > .right {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2.5rem;
+    background-color: #d9dfe6;
+    border-radius: 1rem;
+
+    > video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

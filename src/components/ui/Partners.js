@@ -101,7 +101,7 @@ const Partners = () => {
           <Image src={AIRON} alt="" />
         </li>
       </ul>
-      <ul className={cx(['list', 'mobile'])}>
+      <ul className={cx(['list', 'tablet'])}>
         <li>
           <Image src={DRSYS} alt="" />
         </li>
@@ -118,7 +118,7 @@ const Partners = () => {
           <Image src={SHECO} alt="" />
         </li>
       </ul>
-      <ul className={cx(['list', 'mobile'])}>
+      <ul className={cx(['list', 'tablet'])}>
         <li>
           <Image src={GLOBAL_KOREA} alt="" />
         </li>
@@ -138,7 +138,7 @@ const Partners = () => {
           <Image src={THIRDEYE} alt="" />
         </li>
       </ul>
-      <ul className={cx(['list', 'mobile'])}>
+      <ul className={cx(['list', 'tablet'])}>
         <li>
           <Image src={SMATII} alt="" />
         </li>
@@ -158,7 +158,7 @@ const Partners = () => {
           <Image src={AIRON} alt="" />
         </li>
       </ul>
-      <ul className={cx(['list', 'mobile'])}>
+      <ul className={cx(['list', 'tablet'])}>
         <li>
           <Image src={BTE} alt="" />
         </li>

@@ -44,8 +44,11 @@
     bottom: 0;
     z-index: 2;
     width: calc(100% - 12.5rem);
-    @include MOBILE {
+    @include TABLET {
       width: 100%;
+      padding: 0 4rem;
+    }
+    @include MOBILE {
       padding: 0 2rem;
     }
 

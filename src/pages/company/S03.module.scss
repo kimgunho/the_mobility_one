@@ -26,6 +26,11 @@
       &::-webkit-scrollbar {
         display: none;
       }
+      @include MOBILE {
+        flex-direction: column;
+        padding: 0 2rem 0 3rem;
+        overflow-x: auto;
+      }
 
       > li {
         min-width: 600px;
@@ -37,9 +42,19 @@
           @media screen and (max-width: 1812px) {
             margin-left: 6.75rem;
           }
+          @include MOBILE {
+            margin-left: 0;
+          }
         }
         &:last-of-type {
           padding-right: 6.75rem;
+          @include MOBILE {
+            padding-right: 0;
+          }
+        }
+        @include MOBILE {
+          min-width: auto;
+          padding-left: 2rem;
         }
         &::before {
           content: '';
@@ -62,11 +77,17 @@
           background-color: white;
           border: 12px solid #0094ff;
           border-radius: 50%;
+          @include MOBILE {
+            left: -10px;
+            width: 21px;
+            height: 21px;
+            border: 6px solid #0094ff;
+          }
         }
 
         > .top {
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           gap: 1.25rem;
 
           > .years {
@@ -133,6 +154,9 @@
     }
     > .controls {
       @include wrapper;
+      @include MOBILE {
+        display: none;
+      }
 
       > .scrollbar {
         height: 200px;

@@ -18,9 +18,15 @@
     margin-top: 4rem;
     display: flex;
     gap: 1.5rem;
+    @include TABLET {
+      flex-direction: column;
+    }
 
     > * {
       width: 50%;
+      @include TABLET {
+        width: 100%;
+      }
 
       &.left {
         display: flex;
@@ -32,6 +38,9 @@
           background-color: black;
           border-radius: 1.5rem;
           padding: 4rem;
+          @include MOBILE {
+            padding: 2rem;
+          }
 
           > .title {
             font-size: 2rem;
@@ -43,11 +52,18 @@
             display: flex;
             justify-content: space-between;
             gap: 1.5rem;
+            @include MOBILE {
+              flex-direction: column;
+            }
 
             > li {
               display: flex;
               flex-direction: column;
               gap: 0.75rem;
+              @include MOBILE {
+                flex-direction: row;
+                align-items: center;
+              }
 
               > p {
                 display: flex;
@@ -73,6 +89,9 @@
                 display: flex;
                 flex-direction: column;
                 gap: 0.75rem;
+                @include MOBILE {
+                  flex-direction: row;
+                }
 
                 > li {
                   color: white;
@@ -91,6 +110,11 @@
         align-items: center;
         justify-content: center;
         padding: 2.5rem;
+        @include TABLET {
+          order: -1;
+          background-color: transparent;
+          padding: 0;
+        }
 
         > .image {
           width: 100%;

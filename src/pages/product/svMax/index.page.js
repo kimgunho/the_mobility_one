@@ -5,6 +5,7 @@ import Image from 'next/image';
 import GlobalLayout from '@/components/layout/GlobalLayout';
 import SVMAX from '@/images/product/SVMAX/SVMax.png';
 import NETWORK from '@/images/product/SVMAX/network.png';
+import NETWORK_MOBILE from '@/images/product/SVMAX/network_mobile.png';
 import List from '@/components/ui/List';
 import SubTop from '@/components/ui/SubTop';
 import styles from './index.module.scss';
@@ -62,7 +63,8 @@ const Page = () => {
           <strong className={cx('title')}>{t('SVMax.content02_title')}</strong>
           <p className={cx('desc')}>real-time video, control, and mission</p>
           <div className={cx('image')}>
-            <Image src={NETWORK} alt="" />
+            <Image className={cx('desktop')} src={NETWORK} alt="" />
+            <Image className={cx('mobile')} src={NETWORK_MOBILE} alt="" />
           </div>
         </div>
       </div>

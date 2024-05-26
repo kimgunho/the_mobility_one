@@ -25,10 +25,21 @@
     }
     > .list {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
       grid-gap: 1.5rem;
       margin-bottom: 5rem;
+      @include WIDE {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include DESKTOP {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include TABLET {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include MOBILE {
+        grid-template-columns: 1fr;
+      }
 
       > li {
         position: relative;
@@ -76,7 +87,7 @@
               font-weight: 600;
             }
             > .title {
-              font-size: 2rem;
+              font-size: 1.5rem;
               font-weight: 600;
               color: white;
               text-overflow: ellipsis;
