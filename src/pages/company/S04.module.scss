@@ -17,6 +17,10 @@
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+      @include TABLET {
+        flex-direction: column;
+        gap: 5rem;
+      }
 
       > .title {
         font-size: 4rem;
@@ -33,10 +37,14 @@
       padding: 5rem 4rem;
       background-color: white;
       border-radius: 3.75rem;
+      @include MOBILE {
+        padding: 5rem 2rem;
+      }
 
       > .row {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 1.5rem;
         margin-bottom: 3.5rem;
 
@@ -125,6 +133,9 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 1.5rem;
         grid-gap: 1.5rem;
+        @include TABLET {
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
       > .right {
         margin-top: 3.5rem;

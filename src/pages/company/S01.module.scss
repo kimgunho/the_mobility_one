@@ -8,6 +8,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  @include MOBILE {
+    padding: 0 2rem;
+    height: auto;
+    padding-top: 250px;
+    padding-bottom: 100px;
+  }
 
   > .logo {
     position: relative;
@@ -15,7 +22,7 @@
 
     > .image {
       width: 100%;
-      max-width: 236px;
+      max-width: 14.75rem;
       margin: auto;
 
       > img {
@@ -35,11 +42,17 @@
   > .bold {
     position: relative;
     z-index: 1;
-    margin-top: 80px;
+    margin-top: 5rem;
     text-align: center;
     font-size: 3.75rem;
     font-weight: 600;
     @include gradientText;
+    @include TABLET {
+      padding: 0 2rem;
+    }
+    @include MOBILE {
+      font-size: 2.5rem;
+    }
   }
   > .text {
     color: white;
@@ -52,12 +65,19 @@
     inset: 0;
     mix-blend-mode: soft-light;
     isolation: isolate;
+    @include TABLET {
+      mask: linear-gradient(0deg, transparent, white 5%, white 95%);
+    }
     &::before {
       content: '';
-      background: radial-gradient(at 50% bottom, rgba(#6bb2f4, 1) 0%, rgba(black, 1) 100%);
+      background: radial-gradient(at 50% bottom, #6bb2f4 0%, #101010 100%);
       position: absolute;
       inset: 0;
       mix-blend-mode: soft-light;
+      @include TABLET {
+        background: linear-gradient(180deg, #6bb2f4 0%, #101010 100%);
+        mask: linear-gradient(0deg, transparent, #101010 20%, #101010 80%);
+      }
     }
     &::after {
       content: '';
@@ -66,6 +86,9 @@
       z-index: -10;
       inset: 0;
       opacity: 0.35;
+      @include TABLET {
+        mask: linear-gradient(0deg, transparent, #101010 20%, #101010 80%);
+      }
     }
   }
 }
