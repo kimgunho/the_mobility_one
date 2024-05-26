@@ -6,7 +6,7 @@
   margin-top: 7.5rem;
   padding-bottom: 12.5rem;
 
-  > .slick {
+  > .wrapper {
     position: relative;
 
     > .controls {
@@ -15,58 +15,44 @@
       }
       > .button {
         position: absolute;
-        top: 0;
-        z-index: 1;
+        top: 50%;
+        z-index: 10;
         bottom: 0;
-        width: calc((100vw - 1704px - 48px) / 2);
-        background-color: rgba(0, 0, 0, 0.4);
         color: white;
-        @media screen and (max-width: 1704px) {
-          width: 90px;
-        }
+        background-color: transparent;
+        transform: translateY(-50%);
 
         &.prev {
-          left: 0;
-          border-radius: 0 2.5rem 2.5rem 0;
+          left: 1rem;
         }
         &.next {
-          right: 0;
-          border-radius: 2.5rem 0 0 2.5rem;
+          right: 1rem;
         }
       }
     }
-    // .slick-slider
-    > .variable {
-      width: 100%;
-      // .slick-list
+    > .flicking {
       > div {
-        // .slick-track
-        > div {
-          display: flex !important;
-          // .slick-slide
-          > div {
-            height: inherit !important;
-
-            > div {
-              padding: 0 12px;
-              width: 100%;
-              max-width: 1728px;
-              @include MOBILE {
-                padding: 0 2rem;
-              }
-
-              @media screen and (min-width: 1704px) {
-                min-width: 1728px;
-              }
-
-              > .swipe {
-                width: 100%;
-                position: relative;
-                background-color: white;
-                overflow: hidden;
-                border-radius: 2.5rem;
-              }
+        > .panel {
+          width: 100%;
+          margin-right: 24px;
+          background-color: white;
+          border-radius: 2.5rem;
+          position: relative;
+          max-width: min(1704px, calc(100vw - 13.5rem));
+          &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+          }
+          &.active {
+            &::after {
+              display: none;
             }
+          }
+          @include TABLET {
+            max-width: 100%;
           }
         }
       }

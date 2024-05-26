@@ -1,9 +1,9 @@
 import { useRef } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames/bind';
-import Slider from 'react-slick';
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Flicking from '@egjs/react-flicking';
+import '@egjs/react-flicking/dist/flicking.css';
 
 import styles from './index.module.scss';
 import UseCase01 from './UseCase01';
@@ -15,30 +15,24 @@ import UseCase05 from './UseCase05';
 const cx = classNames.bind(styles);
 
 const S05 = () => {
-  const slickRef = useRef();
-
-  const settings = {
-    className: cx('variable'),
-    centerMode: true,
-    arrows: false,
-    centerPadding: '0px',
-    slidesToShow: 1,
-    infinite: true,
-    speed: 500,
-    variableWidth: true,
-  };
+  const [activeIndex, setIndex] = useState(0);
+  const flickingRef = useRef();
 
   const prev = () => {
-    slickRef.current.slickPrev();
+    flickingRef.current.prev().catch(() => {});
   };
 
   const next = () => {
-    slickRef.current.slickNext();
+    flickingRef.current.next().catch(() => {});
+  };
+
+  const handleChange = (e) => {
+    setIndex(e.index);
   };
 
   return (
     <div className={cx('container')}>
-      <div className={cx('slick')}>
+      <div className={cx('wrapper')}>
         <div className={cx('controls')}>
           <button onClick={prev} className={cx('button', 'prev')} type="">
             <RiArrowLeftSLine size={48} />
@@ -47,23 +41,23 @@ const S05 = () => {
             <RiArrowRightSLine size={48} />
           </button>
         </div>
-        <Slider ref={(slider) => (slickRef.current = slider)} {...settings}>
-          <div className={cx('swipe')}>
+        <Flicking ref={flickingRef} onChanged={handleChange} className={cx('flicking')} align={'center'}>
+          <div className={cx('panel', { active: activeIndex === 0 })}>
             <UseCase01 />
           </div>
-          <div className={cx('swipe')}>
+          <div className={cx('panel', { active: activeIndex === 1 })}>
             <UseCase02 />
           </div>
-          <div className={cx('swipe')}>
+          <div className={cx('panel', { active: activeIndex === 2 })}>
             <UseCase03 />
           </div>
-          <div className={cx('swipe')}>
+          <div className={cx('panel', { active: activeIndex === 3 })}>
             <UseCase04 />
           </div>
-          <div className={cx('swipe')}>
+          <div className={cx('panel', { active: activeIndex === 4 })}>
             <UseCase05 />
           </div>
-        </Slider>
+        </Flicking>
       </div>
     </div>
   );
