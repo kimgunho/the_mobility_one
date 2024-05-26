@@ -64,7 +64,7 @@ const Page = () => {
           <p className={cx('desc')}>real-time video, control, and mission</p>
           <div className={cx('image')}>
             <Image className={cx('desktop')} src={NETWORK} alt="" />
-            <Image className={cx('tablet')} src={NETWORK_MOBILE} alt="" />
+            <Image className={cx('mobile')} src={NETWORK_MOBILE} alt="" />
           </div>
         </div>
       </div>

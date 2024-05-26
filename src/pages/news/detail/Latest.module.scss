@@ -18,6 +18,12 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     grid-gap: 1.5rem;
+    @include TABLET {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include MOBILE {
+      grid-template-columns: 1fr;
+    }
 
     > li {
       position: relative;

@@ -120,13 +120,13 @@
           height: 100%;
           object-fit: contain;
           &.desktop {
-            @include TABLET {
+            @include MOBILE {
               display: none;
             }
           }
-          &.tablet {
+          &.mobile {
             display: none;
-            @include TABLET {
+            @include MOBILE {
               display: block;
             }
           }
