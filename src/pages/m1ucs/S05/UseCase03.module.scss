@@ -5,6 +5,9 @@
   display: flex;
   gap: 2.5rem;
   height: 61rem;
+  @include TABLET {
+    height: auto;
+  }
 
   > .left {
     width: 45%;
