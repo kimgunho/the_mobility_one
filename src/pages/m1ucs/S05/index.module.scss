@@ -1,5 +1,7 @@
 @import '@/styles/common.scss';
 
+$maxWidth: min(1704px, calc(100vw - 13.5rem));
+
 .container {
   position: relative;
   z-index: 2;
@@ -8,25 +10,31 @@
 
   > .wrapper {
     position: relative;
+    @include TABLET {
+      padding: 0 2rem;
+    }
 
     > .controls {
-      @include TABLET {
+      @include MOBILE {
         display: none;
       }
       > .button {
         position: absolute;
         top: 50%;
-        z-index: 10;
-        bottom: 0;
+        height: 50%;
+        z-index: 2;
         color: white;
-        background-color: transparent;
         transform: translateY(-50%);
-
+        background-color: transparent;
+        width: calc((100vw - $maxWidth) / 2);
         &.prev {
-          left: 1rem;
+          left: 0;
         }
         &.next {
-          right: 1rem;
+          right: 0;
+        }
+        @include TABLET {
+          color: #101010;
         }
       }
     }
@@ -38,7 +46,7 @@
           background-color: white;
           border-radius: 2.5rem;
           position: relative;
-          max-width: min(1704px, calc(100vw - 13.5rem));
+          max-width: $maxWidth;
           &::after {
             content: '';
             position: absolute;
@@ -53,6 +61,7 @@
           }
           @include TABLET {
             max-width: 100%;
+            height: fit-content;
           }
         }
       }

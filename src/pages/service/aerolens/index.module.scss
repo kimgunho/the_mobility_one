@@ -45,6 +45,9 @@
         align-items: center;
         justify-content: center;
         margin-bottom: 5rem;
+        @include MOBILE {
+          padding: 2rem;
+        }
 
         > img {
           height: 100%;
